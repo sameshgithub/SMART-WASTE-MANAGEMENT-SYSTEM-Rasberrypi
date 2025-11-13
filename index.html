@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Waste Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Waste Management System</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Bin Status</h2>
+            <div class="level-box">
+                <div id="level-bar">60%</div>
+            </div>
+            <p class="status-text">Current Fill Level: <span id="level-value">60%</span></p>
+        </div>
+
+        <div class="card">
+            <h2>Last Updated</h2>
+            <p id="updated-time">--:--:--</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Powered by Raspberry Pi | Smart IoT System</p>
+    </footer>
+
+    <script>
+        // Demo value – Replace with real sensor fetch API endpoint
+        function fetchWasteLevel() {
+            // For real use: fetch('/api/level')
+            let level = 60; // Example level
+            document.getElementById("level-value").innerText = level + "%";
+            document.getElementById("level-bar").style.width = level + "%";
+            document.getElementById("level-bar").innerText = level + "%";
+
+            let now = new Date();
+            document.getElementById("updated-time").innerText = now.toLocaleTimeString();
+        }
+
+        setInterval(fetchWasteLevel, 2000);
+    </script>
+
+</body>
+</html>
