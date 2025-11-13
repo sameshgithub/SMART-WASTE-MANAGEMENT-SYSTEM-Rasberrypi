@@ -1,0 +1,5 @@
+Flask>=2.0
+paho-mqtt>=1.6.1
+# Optional packages:
+# firebase-admin>=5.0.0
+# RPi.GPIO (installed on Raspberry Pi via apt; not via pip)
